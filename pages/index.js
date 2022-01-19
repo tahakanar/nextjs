@@ -2,14 +2,14 @@ import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
   {
-    id: 1,
+    id: "m1",
     title: "A First Meetup",
     image: "https://via.placeholder.com/400x300",
     address: "Some Adress, 1234 City",
     description: "This is a second meetup",
   },
   {
-    id: 2,
+    id: "m2",
     title: "A Second Meetup",
     image: "https://via.placeholder.com/400x300",
     address: "Some Adress, 12345 City",
@@ -20,6 +20,18 @@ const DUMMY_MEETUPS = [
 function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
+
+// export async function getServerSideProps(context) { // if data changes all the time, use setserversideprops
+//   const req = context.req;
+//   const res = context.res;
+
+//   //fetch data from an API
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//   };
+// }
 
 export async function getStaticProps() {
   return {
